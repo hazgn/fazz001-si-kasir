@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "9111a862-77ef-435f-b627-15c46702a7f7",
+		"name": "FAZZ001-SI-Kasir",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18051667"
+	},
+	"item": [
+		{
+			"name": "List User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/user",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/transactions",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions By User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/transactions/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"transactions",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "price",
+							"value": "15000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/transactions/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"transactions",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

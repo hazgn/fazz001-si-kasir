@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* header start */
+.hamburger-line{
+    @apply my-1 block h-[2px] w-[20px] bg-white;
+}
+.hamburger-active > span:nth-child(1){
+    @apply rotate-[40deg];
+}
+
+.hamburger-active > span:nth-child(2) {
+    @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+    @apply -rotate-[40deg];
+}
+
+.checkout-active{
+    @apply right-0 translate-x-0;
+}
