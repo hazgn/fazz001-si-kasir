@@ -110,6 +110,6 @@ npm run dev
 
 ---
 
-### `Server` <>
+### `Server` <https://fazz001-si-kasir-api.vercel.app>
 
-### `Frontend` <>
+### `Frontend` <https://fazz001-si-kasir-vue.vercel.app>
