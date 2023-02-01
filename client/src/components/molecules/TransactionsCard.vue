@@ -17,9 +17,7 @@
         <p class="pl-1 text-sm text-center xl:text-left">
           Total : Rp. {{ formatRupiah(payload.total) }}
         </p>
-        <!-- <p class="pl-1 text-sm text-center xl:text-left">
-          Date : {{ moment(payload.date).format("MMM Do YY") }}
-        </p> -->
+
         <div class="flex justify-center xl:justify-start">
           <ButtonClick
             label="Detail"
@@ -36,7 +34,7 @@
 <script>
 import ButtonClick from "../atom/ButtonClick.vue";
 import formatRupiah from "../../modules/helpers/formatRupiah";
-// import moment from "moment";
+import defaultImages from "../../assets/images/default-images.jpg";
 
 export default {
   name: "TransactionsComponent",
@@ -44,15 +42,13 @@ export default {
     ButtonClick,
   },
   methods: {
-    // moment,
     formatRupiah,
     onDetail(id) {
       this.$router.push(`/transactions/${id}`);
     },
     errorImgHandler(e) {
       e.target.onerror = null;
-      e.target.src =
-        "https://i.pinimg.com/474x/18/b9/ff/18b9ffb2a8a791d50213a9d595c4dd52.jpg";
+      e.target.src = defaultImages;
     },
   },
   props: {

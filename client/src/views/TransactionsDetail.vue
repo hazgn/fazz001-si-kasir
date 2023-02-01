@@ -9,7 +9,11 @@
           {{ transactionsByIdData.data.name }}
         </p>
         <div class="flex justify-center mt-2">
-          <img src="https://placeimg.com/192/192/people" class="rounded-full" />
+          <img
+            src="https://placeimg.com/192/192/people"
+            class="rounded-full max-h-40 min-h-max"
+            @error="errorImgHandler"
+          />
         </div>
         <div class="mt-3">
           <p class="text-xl text-center">History Transactions</p>
@@ -62,6 +66,8 @@ import moment from "moment";
 import { mapActions, mapState } from "pinia";
 import { transactions } from "../stores/transactions";
 
+import defaultImages from "../assets/images/default-images.jpg";
+
 export default {
   name: "TransactionsDetail",
   components: { Navbar, Checkout },
@@ -89,6 +95,10 @@ export default {
       } else {
         return moment(date).subtract(10, "days").calendar();
       }
+    },
+    errorImgHandler(e) {
+      e.target.onerror = null;
+      e.target.src = defaultImages;
     },
   },
 };
